@@ -21,7 +21,8 @@ namespace MOD005424_Assignment
             Console.Clear();
             LaneAndDetails(lane1, lane2, lane3,vehicleQueue,carsLeft,counters,totalLitresDispensed);
             TextInfo(lane1, lane2, lane3);
-            Console.Write("Type a pump number to send a car: ");
+            Console.WriteLine("Type a pump number to send a car: ");
+            Console.WriteLine("Or press [ESC] to logout");
         }
         /// <summary>
         /// Displays what free pumps are currently available by running FreePumps method

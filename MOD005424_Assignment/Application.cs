@@ -8,7 +8,7 @@ namespace MOD005424_Assignment
 {
     public class Application
     {
-        private DateTime login = DateTime.Now;
+        
         
 
         public static void Run()
@@ -23,11 +23,18 @@ namespace MOD005424_Assignment
             GUI gui = new GUI();
             Counters counters = new Counters();
 
-
+            //initialise counter variables
             int carTimerCounter = 0;
             int carsLeft = 0;
             float totalLitresDispensed = 0f;
             float placeholderTotalLitresDispensed = 0f;
+            float pricePerLitre = 1.15f;
+
+            //setup pay variables
+            DateTime loginTime = DateTime.Now; //Established on program initialisation so we can calculate pay upon logout
+            float payPerMinute = 8.90f / 60; //Establish pay per minute, makes it easier to calculate pay later on. 
+
+            bool programRun = true;
 
                 Random rng = new Random();
 
@@ -35,14 +42,14 @@ namespace MOD005424_Assignment
 
             
             //start program loop
-            while (true)
+            while (programRun)
             {
                 Thread.Sleep(100);
                 
                 //Checks for user input to allow user to select a pump
                 if (Console.KeyAvailable)
                 {
-                    CheckKeyPress(lane1, lane2, lane3, vehicles,carsLeft,counters,totalLitresDispensed);
+                    programRun = CheckKeyPress(lane1, lane2, lane3, vehicles,carsLeft,counters,totalLitresDispensed,programRun);
                 }
 
                 //Uses a random number generator to add a vehicle to vehicles list between 1.5-2.5 seconds
@@ -86,6 +93,27 @@ namespace MOD005424_Assignment
 
             }
 
+            //On logout
+            //Calculate the total time logged in
+            DateTime logoutTime = DateTime.Now;
+            TimeSpan timeLoggedIn = logoutTime - loginTime;
+
+            //Calculate Bonus
+            float bonus = (pricePerLitre * totalLitresDispensed) / 100;
+
+            //Convert logged in hours in to minutes so pay calculation is easier later on
+            var timeLoggedInHours = Convert.ToInt32(timeLoggedIn.Hours * 60);
+            var timeLoggedInMinutes = Convert.ToInt32(timeLoggedIn.Minutes);
+
+            //Add together hours and minutes (e.g 2 hours and 5 minutes should be 125) and times it by the pay per minute
+            float totalPay = payPerMinute * (timeLoggedInMinutes + timeLoggedInHours) + bonus;
+
+            //Present info to user
+            Console.WriteLine("Logging out of system");
+            Console.WriteLine($"You were logged on to the system for {timeLoggedInHours} hours,{timeLoggedIn.Minutes}. ");
+            Console.WriteLine($"You dispensed a total of {totalLitresDispensed} litres");
+            Console.WriteLine($"At £{payPerMinute} with a £{bonus} you have earned £{totalPay}");
+
         }
 
         private static float UpdateTotalLitres(Lane lane, float ftotalLitresDispensed)
@@ -115,7 +143,7 @@ namespace MOD005424_Assignment
             }
         }
         //Checks for key press, if one is selected, loads pump select method and reloads GUI
-        private static void CheckKeyPress(Lane lane1, Lane lane2, Lane lane3, List<Vehicle> vehicle, int fcarsLeft, Counters counters, float totalLitresDispensed)
+        private static bool CheckKeyPress(Lane lane1, Lane lane2, Lane lane3, List<Vehicle> vehicle, int fcarsLeft, Counters counters, float totalLitresDispensed, bool fProgramRun)
         {
             ConsoleKeyInfo keyPress = Console.ReadKey(true);
 
@@ -175,6 +203,15 @@ namespace MOD005424_Assignment
                 PumpSelect(2, lane3, vehicle);
                 GUI.LoadGui(lane1, lane2, lane3, vehicle, fcarsLeft, counters, totalLitresDispensed);
             }
+
+            if (keyPress.Key == ConsoleKey.Escape)
+            {
+                fProgramRun = false;
+                return fProgramRun;
+            }
+
+            fProgramRun = true;
+            return fProgramRun;
         }
 
         //Initially checks if pump is occupied, if it is, display a warning. If it is not, find a vehicle that has _isfuelling set to false
@@ -211,5 +248,6 @@ namespace MOD005424_Assignment
             Console.BackgroundColor = ConsoleColor.Black;
             Thread.Sleep(1500);
         }
+
     }
 }
