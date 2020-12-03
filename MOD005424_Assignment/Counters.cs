@@ -8,7 +8,6 @@ namespace MOD005424_Assignment
     public class Counters
     {
         private int _carsServiced = 0;
-        private float _totalLitres;
 
         public void IncreaseCarsServiced()
         {

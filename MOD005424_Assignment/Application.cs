@@ -27,6 +27,7 @@ namespace MOD005424_Assignment
             int carTimerCounter = 0;
             int carsLeft = 0;
             float totalLitresDispensed = 0f;
+            float placeholderTotalLitresDispensed = 0f;
 
                 Random rng = new Random();
 
@@ -45,11 +46,17 @@ namespace MOD005424_Assignment
                 }
 
                 //Uses a random number generator to add a vehicle to vehicles list between 1.5-2.5 seconds
+                //Also uses this opportunity to update the number of litres that have been filled on all pumps.
                 carTimerCounter++;
                 if (carTimerCounter > rng.Next(15,25))
                 {
                     carTimerCounter = 0;
                     vehicles.Add(new Vehicle());
+                    totalLitresDispensed = 0;
+                    totalLitresDispensed =
+                        UpdateTotalLitres(lane1, totalLitresDispensed) +
+                        UpdateTotalLitres(lane2, totalLitresDispensed) +
+                        UpdateTotalLitres(lane3, totalLitresDispensed);
                     GUI.LoadGui(lane1, lane2, lane3, vehicles, carsLeft, counters, totalLitresDispensed);
                 }
 
@@ -76,22 +83,19 @@ namespace MOD005424_Assignment
                 FillVehicle(lane2, counters);
                 FillVehicle(lane3, counters);
 
-                //Update TotalLitres
-                totalLitresDispensed = UpdateTotalLitres(lane1, totalLitresDispensed);
-                totalLitresDispensed = UpdateTotalLitres(lane2, totalLitresDispensed);
-                totalLitresDispensed = UpdateTotalLitres(lane3, totalLitresDispensed);
+
             }
 
         }
 
-        private static float UpdateTotalLitres(Lane lane, float totalLitresDispensed)
+        private static float UpdateTotalLitres(Lane lane, float ftotalLitresDispensed)
         {
             foreach (Pump pumps in lane.Pump)
             {
-                //No idea
+                ftotalLitresDispensed += pumps.TotalFuelDelivered();
             }
 
-            return totalLitresDispensed;
+            return ftotalLitresDispensed;
         }
 
         private static void FillVehicle(Lane fLane, Counters counters)

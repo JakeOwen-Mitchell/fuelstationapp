@@ -9,7 +9,9 @@ namespace MOD005424_Assignment
         private bool _isOccupied;
         private Vehicle _vehicleAtPump;
         private int _fuelTimer = 0;
-        private readonly int _maxWaitTime = 180;
+        private readonly int _timeToFillVehicle = 180;
+        private readonly float _fuelDeliverPerHundredMS = 0.15f;
+        private float _totalFuelDelivered = 0f;
 
         public Pump()
         {
@@ -40,10 +42,10 @@ namespace MOD005424_Assignment
         {
             bool VehicleIsFilled = false;
             _fuelTimer++;
-            
 
-            if (_fuelTimer == _maxWaitTime)
+            if (_fuelTimer >= _timeToFillVehicle)
             {
+                _totalFuelDelivered += (_fuelDeliverPerHundredMS * _timeToFillVehicle) ; //1.5 litres per second * time to fill (18s) = 27
                 _fuelTimer = 0;
                 _vehicleAtPump = null;
                 VehicleIsFilled = true;
@@ -53,6 +55,12 @@ namespace MOD005424_Assignment
 
             return VehicleIsFilled;
 
+        }
+
+        public float TotalFuelDelivered()
+        {
+            float totalFuel = _totalFuelDelivered;
+            return totalFuel;
         }
     }
 }
