@@ -12,7 +12,9 @@ namespace MOD005424_Assignment
         {
             CreatePumps();
         }
-
+        /// <summary>
+        /// Creates 3 pumps when a lane is created. Expected to have Lane 1, 2 and 3 for all 9 pumps.
+        /// </summary>
         private void CreatePumps()
         {
             for (int i = 0; i < 3; i++)

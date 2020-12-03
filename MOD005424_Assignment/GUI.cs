@@ -16,10 +16,10 @@ namespace MOD005424_Assignment
         /// <param name="lane3"></param>
         /// <param name="vehicleQueue"></param>
         /// <param name="carsLeft"></param>
-        public static void LoadGui(Lane lane1, Lane lane2, Lane lane3, List<Vehicle> vehicleQueue, int carsLeft, Counters counters)
+        public static void LoadGui(Lane lane1, Lane lane2, Lane lane3, List<Vehicle> vehicleQueue, int carsLeft, Counters counters,float totalLitresDispensed)
         {
             Console.Clear();
-            LaneAndDetails(lane1, lane2, lane3,vehicleQueue,carsLeft,counters);
+            LaneAndDetails(lane1, lane2, lane3,vehicleQueue,carsLeft,counters,totalLitresDispensed);
             TextInfo(lane1, lane2, lane3);
             Console.Write("Type a pump number to send a car: ");
         }
@@ -47,7 +47,7 @@ namespace MOD005424_Assignment
         /// <param name="lane3"></param>
         /// <param name="vehicleQueue"></param>
         /// <param name="carsLeft"></param>
-        private static void LaneAndDetails(Lane lane1, Lane lane2, Lane lane3, List<Vehicle> vehicleQueue, int carsLeft, Counters counters)
+        private static void LaneAndDetails(Lane lane1, Lane lane2, Lane lane3, List<Vehicle> vehicleQueue, int carsLeft, Counters counters, float totalLitresDispensed)
         {
 
             string whitespace = "   ";
@@ -120,7 +120,7 @@ namespace MOD005424_Assignment
             Console.Write(whitespace);
             Console.Write("Litres Dispensed:");
             Console.SetCursorPosition(59, 5);
-            Console.Write("323"); //Will eventually show number of cars serviced
+            Console.Write(Math.Round(totalLitresDispensed,2)); //Will eventually show number of cars serviced
             Console.SetCursorPosition(65, 5);
             GuiBuilder(true, 0, false);
             Console.WriteLine();

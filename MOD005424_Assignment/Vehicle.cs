@@ -11,7 +11,7 @@ namespace MOD005424_Assignment
         private bool _isFueling;
         private bool _waitTimeExpired;
         private int _waitTimeCounter;
-        public float LitresInCar {get set};
+        public float LitresInCar { get; set; }
 
         public Vehicle()
         {

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\My Drive\\Uni\\MOD005424 L4 Programming Concepts SEM1 (15)\\010 (Project)\\MOD005424_Assignment\\MOD005424_Assignment\\MOD005424_Assignment.csproj",
+      "projectUniqueName": "D:\\fuelstationapp\\MOD005424_Assignment\\MOD005424_Assignment.csproj",
       "projectName": "MOD005424_Assignment",
-      "projectPath": "G:\\My Drive\\Uni\\MOD005424 L4 Programming Concepts SEM1 (15)\\010 (Project)\\MOD005424_Assignment\\MOD005424_Assignment\\MOD005424_Assignment.csproj",
+      "projectPath": "D:\\fuelstationapp\\MOD005424_Assignment\\MOD005424_Assignment.csproj",
       "packagesPath": "C:\\Users\\Mitch\\.nuget\\packages\\",
-      "outputPath": "G:\\My Drive\\Uni\\MOD005424 L4 Programming Concepts SEM1 (15)\\010 (Project)\\MOD005424_Assignment\\MOD005424_Assignment\\obj\\",
+      "outputPath": "D:\\fuelstationapp\\MOD005424_Assignment\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mitch\\AppData\\Roaming\\NuGet\\NuGet.Config",

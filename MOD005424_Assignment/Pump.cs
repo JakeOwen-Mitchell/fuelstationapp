@@ -9,8 +9,7 @@ namespace MOD005424_Assignment
         private bool _isOccupied;
         private Vehicle _vehicleAtPump;
         private int _fuelTimer = 0;
-        private float litresDispensedPerMS = 0.0015f;
-        public float TotalLitresDispensed {get set}
+        private readonly int _maxWaitTime = 180;
 
         public Pump()
         {
@@ -41,12 +40,11 @@ namespace MOD005424_Assignment
         {
             bool VehicleIsFilled = false;
             _fuelTimer++;
-            _vehicleAtPump.LitresInCar += litresDispensedPerMS;
+            
 
-            if (_fuelTimer == 180)
+            if (_fuelTimer == _maxWaitTime)
             {
                 _fuelTimer = 0;
-                TotalLitresDispensed += _vehicleAtPump.LitresInCar;
                 _vehicleAtPump = null;
                 VehicleIsFilled = true;
                 ChangeOccupancy();

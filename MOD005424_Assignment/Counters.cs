@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace MOD005424_Assignment
 {
     public class Counters
     {
-        private int carsServiced = 0;
+        private int _carsServiced = 0;
+        private float _totalLitres;
 
         public void IncreaseCarsServiced()
         {
-            carsServiced++;
+            _carsServiced++;
         }
 
         public int GetCarsServiced()
         {
 
-            return carsServiced;
+            return _carsServiced;
         }
 
     }
