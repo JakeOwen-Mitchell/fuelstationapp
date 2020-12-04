@@ -32,7 +32,7 @@ namespace Petrol_Station_Simulator
 
             //setup pay variables
             DateTime loginTime = DateTime.Now; //Established on program initialisation so we can calculate pay upon logout
-            float payPerMinute = 8.90f / 60; //Establish pay per minute, makes it easier to calculate pay later on. 
+            float payPerMinute = 8.95f / 60; //Establish pay per minute, makes it easier to calculate pay later on. 
 
             bool programRun = true;
 
@@ -109,10 +109,13 @@ namespace Petrol_Station_Simulator
             float totalPay = payPerMinute * (timeLoggedInMinutes + timeLoggedInHours) + bonus;
 
             //Present info to user
+            Console.Clear();
             Console.WriteLine("Logging out of system");
-            Console.WriteLine($"You were logged on to the system for {timeLoggedInHours} hours,{timeLoggedIn.Minutes}. ");
-            Console.WriteLine($"You dispensed a total of {totalLitresDispensed} litres");
-            Console.WriteLine($"At £{payPerMinute} with a £{bonus} you have earned £{totalPay}");
+            Console.WriteLine($"You were logged on to the system for {timeLoggedInHours} hours,{timeLoggedIn.Minutes} minutes. ");
+            Console.WriteLine($"You dispensed a total of {Math.Round(totalLitresDispensed)} litres");
+            Console.WriteLine($"At £{Math.Round(payPerMinute*60,2)} per hour with a £{Math.Round(bonus,2)} bonus you have earned £{Math.Round(totalPay,2)}");
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
 
         }
 
@@ -215,7 +218,7 @@ namespace Petrol_Station_Simulator
         }
 
         //Initially checks if pump is occupied, if it is, display a warning. If it is not, find a vehicle that has _isfuelling set to false
-        private static void PumpSelect(int stationNo,Lane fLane, List<Vehicle> vehicle)
+        public static void PumpSelect(int stationNo,Lane fLane, List<Vehicle> vehicle)
         {
             if (!fLane.Pump[stationNo].CheckOccupancy())
             {
