@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace MOD005424_Assignment
+namespace Petrol_Station_Simulator
 {
     public class Counters
     {

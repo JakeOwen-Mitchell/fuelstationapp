@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\fuelstationapp\\MOD005424_Assignment\\MOD005424_Assignment.csproj",
-      "projectName": "MOD005424_Assignment",
-      "projectPath": "D:\\fuelstationapp\\MOD005424_Assignment\\MOD005424_Assignment.csproj",
+      "projectUniqueName": "D:\\fuelstationapp\\MOD005424_Assignment\\Petrol_Station_Simulator.csproj",
+      "projectName": "Petrol_Station_Simulator",
+      "projectPath": "D:\\fuelstationapp\\MOD005424_Assignment\\Petrol_Station_Simulator.csproj",
       "packagesPath": "C:\\Users\\Mitch\\.nuget\\packages\\",
       "outputPath": "D:\\fuelstationapp\\MOD005424_Assignment\\obj\\",
       "projectStyle": "PackageReference",

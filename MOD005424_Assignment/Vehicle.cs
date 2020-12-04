@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 
-namespace MOD005424_Assignment
+namespace Petrol_Station_Simulator
 {
     public class Vehicle
     {

@@ -1,0 +1,13 @@
+D:\fuelstationapp\MOD005424_Assignment\bin\Debug\netcoreapp3.1\Petrol_Station_Simulator.exe
+D:\fuelstationapp\MOD005424_Assignment\bin\Debug\netcoreapp3.1\Petrol_Station_Simulator.deps.json
+D:\fuelstationapp\MOD005424_Assignment\bin\Debug\netcoreapp3.1\Petrol_Station_Simulator.runtimeconfig.json
+D:\fuelstationapp\MOD005424_Assignment\bin\Debug\netcoreapp3.1\Petrol_Station_Simulator.runtimeconfig.dev.json
+D:\fuelstationapp\MOD005424_Assignment\bin\Debug\netcoreapp3.1\Petrol_Station_Simulator.dll
+D:\fuelstationapp\MOD005424_Assignment\bin\Debug\netcoreapp3.1\Petrol_Station_Simulator.pdb
+D:\fuelstationapp\MOD005424_Assignment\obj\Debug\netcoreapp3.1\Petrol_Station_Simulator.csprojAssemblyReference.cache
+D:\fuelstationapp\MOD005424_Assignment\obj\Debug\netcoreapp3.1\Petrol_Station_Simulator.AssemblyInfoInputs.cache
+D:\fuelstationapp\MOD005424_Assignment\obj\Debug\netcoreapp3.1\Petrol_Station_Simulator.AssemblyInfo.cs
+D:\fuelstationapp\MOD005424_Assignment\obj\Debug\netcoreapp3.1\Petrol_Station_Simulator.csproj.CoreCompileInputs.cache
+D:\fuelstationapp\MOD005424_Assignment\obj\Debug\netcoreapp3.1\Petrol_Station_Simulator.dll
+D:\fuelstationapp\MOD005424_Assignment\obj\Debug\netcoreapp3.1\Petrol_Station_Simulator.pdb
+D:\fuelstationapp\MOD005424_Assignment\obj\Debug\netcoreapp3.1\Petrol_Station_Simulator.genruntimeconfig.cache

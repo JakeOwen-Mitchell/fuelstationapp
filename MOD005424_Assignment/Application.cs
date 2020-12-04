@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 
-namespace MOD005424_Assignment
+namespace Petrol_Station_Simulator
 {
     public class Application
     {
@@ -27,7 +27,7 @@ namespace MOD005424_Assignment
             int carTimerCounter = 0;
             int carsLeft = 0;
             float totalLitresDispensed = 0f;
-            float placeholderTotalLitresDispensed = 0f;
+            //float placeholderTotalLitresDispensed = 0f;
             float pricePerLitre = 1.15f;
 
             //setup pay variables

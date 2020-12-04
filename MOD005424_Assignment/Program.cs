@@ -3,7 +3,7 @@ using System.ComponentModel.Design;
 using System.Text;
 using System.IO;
 
-namespace MOD005424_Assignment
+namespace Petrol_Station_Simulator
 {
     class Program
     {
