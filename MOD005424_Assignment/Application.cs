@@ -32,11 +32,11 @@ namespace Petrol_Station_Simulator
 
             //setup pay variables
             DateTime loginTime = DateTime.Now; //Established on program initialisation so we can calculate pay upon logout
-            float payPerMinute = 8.95f / 60; //Establish pay per minute, makes it easier to calculate pay later on. 
+            float payPerMinute = 8.95f / 60; //Establish pay per minute, makes it easier to calculate pay later on.
 
             bool programRun = true;
 
-                Random rng = new Random();
+            Random rng = new Random();
 
             GUI.LoadGui(lane1, lane2, lane3, vehicles,carsLeft,counters,totalLitresDispensed);
 
@@ -112,7 +112,7 @@ namespace Petrol_Station_Simulator
             Console.Clear();
             Console.WriteLine("Logging out of system");
             Console.WriteLine($"You were logged on to the system for {timeLoggedInHours} hours,{timeLoggedIn.Minutes} minutes. ");
-            Console.WriteLine($"You dispensed a total of {Math.Round(totalLitresDispensed)} litres");
+            Console.WriteLine($"You dispensed a total of {Math.Round(totalLitresDispensed)} litres at a total cost of £{pricePerLitre * totalLitresDispensed} ");
             Console.WriteLine($"At £{Math.Round(payPerMinute*60,2)} per hour with a £{Math.Round(bonus,2)} bonus you have earned £{Math.Round(totalPay,2)}");
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
