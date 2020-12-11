@@ -55,7 +55,7 @@ namespace Petrol_Station_Simulator
                 //Uses a random number generator to add a vehicle to vehicles list between 1.5-2.5 seconds
                 //Also uses this opportunity to update the number of litres that have been filled on all pumps.
                 carTimerCounter++;
-                if (carTimerCounter > rng.Next(15,25))
+                if (carTimerCounter > rng.Next(15,22))
                 {
                     carTimerCounter = 0;
                     vehicles.Add(new Vehicle());
