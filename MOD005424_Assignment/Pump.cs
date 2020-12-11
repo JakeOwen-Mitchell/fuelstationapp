@@ -37,7 +37,13 @@ namespace Petrol_Station_Simulator
             this._vehicleAtPump = fVehicleAtPump;
             return fVehicleAtPump;
         }
-
+	
+	//This method adds 1 to the fuel timer each time it is run (100ms)
+	//Once the fueltimer reaches the amount required to fill vehicle
+	//Update total fuel delivered to the pump, reset fuel timer
+	//remove the vehicle at the pump, set the return variable to true
+	//And change occupancy of the pump back to free
+	
         public bool CheckIfVehicleFilled()
         {
             bool VehicleIsFilled = false;
